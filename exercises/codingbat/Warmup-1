@@ -1,0 +1,57 @@
+import random 
+
+# first 
+n = random.randint(190,200) # 'random.randint' set a random integer value in 'n'
+
+def near_hundred(n):
+    ''' Return the absolute value of a number. 
+    The argument may be an integer, a floating point number, or an object implementing __abs__(). 
+    If the argument is a complex number, its magnitude is returned.'''
+    # abs returns the absolute value of a number. 
+    return ((abs(100 - n) <= 10) or (abs(200 - n) <= 10)) #abs returns the absolute value of a number. 
+
+
+# second 
+a = random.randint(-10,10)
+b = random.randint(-10,10)
+negative = bool(random.getrandbits(1))
+
+def pos_neg(a, b, negative):
+    if negative == True:
+        return a < 0 and b < 0
+    else: 
+        return ((a < 0 and b > 0) or (a > 0 and b < 0))
+
+'''
+def pos_neg(a, b, negative):
+  if negative:
+    return (a < 0 and b < 0)
+  else:
+    return ((a < 0 and b > 0) or (a > 0 and b < 0))
+'''
+
+str = "not candy","candy"
+
+# third function
+def not_string(str):
+  if str.startswith("not"):
+    return str
+  else: 
+    return "not " + str
+
+# all functions goes through here 
+def main():
+    print('\n')
+
+    print('near_hundred:', near_hundred(n))
+    
+    ''' Given 2 int values, return True if one is negative and one is positive. 
+    Except if the parameter "negative" is True, then return True only if both are negative.'''
+    # '&' and 'and' operator is does NOT do the same.
+    print('pos_neg:', pos_neg(a,b,negative))
+
+
+    print('\n')
+
+if __name__ == "__main__":
+    main()
