@@ -14,19 +14,22 @@ def isinstance(n, int):
 
 def niceintegers(n): 
     # if 'n' is positive generate a list 
-    int_list = []
+    new_list = []
 
     if isinstance(n, int):
-        int_list.append(n)
-
+        new_list.append(n)
+        print("before loop: ", new_list)
+        
         for i in range(n):
-            if i-1 % 2 == 0:
-                int_list.append(math.floor((i-1)/2))
+            if n % 2 == 0: # first factor 
+                new_list.append(n/2)
 
-            elif i-1 > 1 and i-1 % 2 == 0: 
-                int_list.append(math.floor((i-1)*3))
-
-        return int_list
+            if i % 2 == 0 and n > 1: # second factor 
+                new_list.append(n*3+1)
+            
+            if n == 1: 
+                return new_list
+            return new_list
      
 
 # If the input is not a positive integer, 
@@ -35,7 +38,7 @@ def niceintegers(n):
     
 
 def main():
-    print(niceintegers(n))
+    print("after loop:", niceintegers(n))
 
 
 if __name__ == "__main__":
