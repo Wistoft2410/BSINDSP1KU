@@ -39,6 +39,11 @@ def not_string(str):
   else: 
     return "not " + str
 
+# forth function 
+def missing_char(str, n):
+  
+
+
 # all functions goes through here 
 def main():
     print('\n')
@@ -50,7 +55,10 @@ def main():
     # '&' and 'and' operator is does NOT do the same.
     print('pos_neg:', pos_neg(a,b,negative))
 
-
+    '''Given a non-empty string and an int n, return a new string where the char at index n has been removed. 
+        The value of n will be a valid index of a char in the original string (i.e. n will be in the range 0..len(str)-1 inclusive).'''
+    # 
+    print(missing_char)
     print('\n')
 
 if __name__ == "__main__":
